@@ -1,0 +1,33 @@
+extends ../templates/layout_web
+
+block content
+
+  div.header
+    h1 My Dictionary
+
+  div.wrapper
+    a.create-new-entry(href="/add") Add a new word
+    div.searchbar
+        label(for='search') Search:
+        input.search(
+            type='text'
+            name='search'
+            placeholder='Enter a search term...' 
+            id='search'  
+        )
+    hr     
+
+    div.list
+      for words in word
+        ul#wordzone
+          h2=words.name
+          a(href=`/${words.id}`)
+            button(type="button") Edit
+          p.big Definition
+          p.small=words.definition
+          p.big Related Words
+          p.small=words.related
+          hr
+
+  script
+      include ../../public/javascripts/searchBar.js 

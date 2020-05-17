@@ -1,0 +1,25 @@
+extends ../templates/layout_backoffice
+
+block content
+   div.header
+      h1 Add a new word
+      
+   div.wrapper
+      form(action="/add" name='createword' enctype="multipart/form-data" method="POST" onsubmit="savemember.disabled = true; return true;")
+         div.each-entry
+            label(for='name') Name
+            br
+            input.inputs(type='text' name='name' id='name' required)
+         div.each-entry
+            label(for='definition') Definition
+            br
+            input.inputs(type='text' name='definition' id='definition' required)
+         div.each-entry
+            label(for='related') Related
+            br
+            input.inputs(type='text' name='related' id='related')
+         div.each-entry
+            input.saveBtn(type="submit", value="Save", name='savemember')
+      
+      a(href="/")
+            button.exitBtn Exit
