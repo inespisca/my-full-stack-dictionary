@@ -52,3 +52,17 @@ button {
 .big {
   font-weight: 700;
 }
+
+ul {
+  margin-right: 5%;
+}
+
+@media only screen and (max-width: 480px) {
+  ul {
+    margin-right: 10%;
+  }
+  #search {
+    width: 50%;
+    height: 35px;
+  }
+}

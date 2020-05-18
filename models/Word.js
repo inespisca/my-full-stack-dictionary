@@ -5,7 +5,7 @@ const connection = require('../db/config');
 const word = {};
 
 word.getWords = (callback) => {
-	connection.query(`SELECT * FROM word`, (err, results) => {
+	connection.query(`SELECT * FROM word ORDER BY name ASC`, (err, results) => {
 		callback(err, results);
 	});
 };
